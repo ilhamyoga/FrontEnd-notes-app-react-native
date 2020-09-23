@@ -1,1 +1,1 @@
-# notesapp-react-native
+# Simple Note App - React Native
