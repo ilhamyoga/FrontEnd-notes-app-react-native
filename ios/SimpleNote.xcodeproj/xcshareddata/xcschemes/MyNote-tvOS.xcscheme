@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "MyNote-tvOS.app"
-               BlueprintName = "MyNote-tvOS"
-               ReferencedContainer = "container:MyNote.xcodeproj">
+               BuildableName = "SimpleNote-tvOS.app"
+               BlueprintName = "SimpleNote-tvOS"
+               ReferencedContainer = "container:SimpleNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "MyNote-tvOSTests.xctest"
-               BlueprintName = "MyNote-tvOSTests"
-               ReferencedContainer = "container:MyNote.xcodeproj">
+               BuildableName = "SimpleNote-tvOSTests.xctest"
+               BlueprintName = "SimpleNote-tvOSTests"
+               ReferencedContainer = "container:SimpleNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "MyNote-tvOSTests.xctest"
-               BlueprintName = "MyNote-tvOSTests"
-               ReferencedContainer = "container:MyNote.xcodeproj">
+               BuildableName = "SimpleNote-tvOSTests.xctest"
+               BlueprintName = "SimpleNote-tvOSTests"
+               ReferencedContainer = "container:SimpleNote.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "MyNote-tvOS.app"
-            BlueprintName = "MyNote-tvOS"
-            ReferencedContainer = "container:MyNote.xcodeproj">
+            BuildableName = "SimpleNote-tvOS.app"
+            BlueprintName = "SimpleNote-tvOS"
+            ReferencedContainer = "container:SimpleNote.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "MyNote-tvOS.app"
-            BlueprintName = "MyNote-tvOS"
-            ReferencedContainer = "container:MyNote.xcodeproj">
+            BuildableName = "SimpleNote-tvOS.app"
+            BlueprintName = "SimpleNote-tvOS"
+            ReferencedContainer = "container:SimpleNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "MyNote-tvOS.app"
-            BlueprintName = "MyNote-tvOS"
-            ReferencedContainer = "container:MyNote.xcodeproj">
+            BuildableName = "SimpleNote-tvOS.app"
+            BlueprintName = "SimpleNote-tvOS"
+            ReferencedContainer = "container:SimpleNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,15 +1,15 @@
 import React,{Component} from 'react';
-import {StyleSheet, FlatList, View, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, FlatList, View, Text, TouchableOpacity } from 'react-native';
 import items from '../Data/items';
 
 class listData extends Component{
   render(){
     return(
-      <View style={{flex: 1, margin: 5}}>
-        <FlatList 
+      <View style={{ flex: 1 }}>
+        <FlatList
           data={items}
           renderItem={({ item, index }) => (
-            <TouchableOpacity 
+            <TouchableOpacity
               style={[styles.card,
                 {backgroundColor:
                   (item.category == 'Learn')? '#2FC2DF' :
@@ -20,7 +20,7 @@ class listData extends Component{
               ]}
               onPress={() => this.props.navigation.navigate('EditNote', item)}>
               
-              <View style={{flex:1, height:'100%', marginLeft:10}}>
+              <View style={{ marginLeft:10 }}>
                 <View style={styles.timeView}>
                   <Text style={styles.text} numberOfLines={1}>{item.time}</Text>
                 </View>
@@ -31,13 +31,13 @@ class listData extends Component{
                   <Text style={styles.text} numberOfLines={1}>{item.category}</Text>
                 </View>
                 <View style={styles.noteView}>
-                  <Text style={styles.text} numberOfLines={4}>{item.note}</Text>
+                  <Text style={styles.text} numberOfLines={6}>{item.note}</Text>
                 </View>
               </View>
             </TouchableOpacity>
           )}
           numColumns={2}
-          keyExtractor={(item,index)=>index.toString()}
+          keyExtractor={(item,index) => index.toString()}
         >
         </FlatList>
       </View>
@@ -48,22 +48,11 @@ class listData extends Component{
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginLeft: 10,
-    marginRight : 10,
+    marginHorizontal: 10,
     marginBottom: 30,
-    padding:11,
+    padding: 10,
     borderRadius: 5,
-    maxHeight: 170,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    height: 170,
     elevation: 5,
   },
   text: {
@@ -81,9 +70,9 @@ const styles = StyleSheet.create({
     width:'100%'
   },
   noteView: {
-    marginTop:5,
-    marginBottom:10,
-    width:'100%'
+    marginTop: 5,
+    marginBottom: 10,
+    width: '100%'
   },
 });
 

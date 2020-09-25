@@ -1,4 +1,4 @@
-package com.mynote;
+package com.simplenote;
 
 import android.app.Application;
 

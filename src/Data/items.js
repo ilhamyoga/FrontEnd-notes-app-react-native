@@ -11,7 +11,7 @@ let items = [
     time: '23 Juni',
     title: 'Hooks',
     category: 'Learn',
-    note: 'UseState, UseEffect, UseConteks, UseStyle, UseReducer, UseRef,wijdoawjdoawjdiawjdoajwodjaowdjoawdoawjdoawjdoajwodjo' 
+    note: 'UseState, UseEffect, UseConteks, UseStyle, UseReducer, UseRef' 
   },
   { 
     key: '3',

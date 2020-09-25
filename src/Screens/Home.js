@@ -1,7 +1,7 @@
 import React from "react";
-import { View, StyleSheet, TextInput, Input, Image, TouchableOpacity, Text} from "react-native";
+import { View, StyleSheet, TextInput, Image, TouchableOpacity } from "react-native";
 import { Container, Header, Title, Left, Right, Button, Body, Content} from "native-base";
-import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+import Menu, { MenuItem } from 'react-native-material-menu';
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import ListData from '../Components/listData';
@@ -25,37 +25,43 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <Container>
-        <Header style={{ backgroundColor: '#FFFFFF'}}>
-          <Left style={{flex:1}}>
+        <Header style={{ backgroundColor: '#FFFFFF' }}>
+          <Left style={{ flex:1 }}>
             <Button
               transparent
               onPress={() => this.props.navigation.openDrawer()}>
               <Image
-                style={{height: 40, width: 40, borderRadius: 30 }}
-                source={
-                  require('../Assets/images/images.jpg')
-                }
+                style={{ height: 40, width: 40, borderRadius: 30 }}
+                source={require('../Assets/images/images.jpg')}
               />
             </Button>
           </Left>
           <Body>
-            <Title style={{alignSelf:'center', color:'#000000'}}>NOTE APP</Title>
+            <Title style={{ alignSelf:'center', color:'#000000' }}>NOTE APP</Title>
           </Body>
           <Right>
-            <View style={{right:10}}>
+            <View style={{ right:8 }}>
               <Menu
                 ref={this.setMenuRef}
-                button={<Icon onPress={this.showMenu} name="sort-amount-asc" style={{ fontSize:20, color: "#000000" }}/>}>
+                button={
+                  <Icon 
+                    onPress={this.showMenu}
+                    name="sort-amount-asc"
+                    style={{ fontSize:20, color: "#000000" }}
+                  />
+                }>
                 <MenuItem onPress={this.hideMenu}>ASCENDING</MenuItem>
                 <MenuItem onPress={this.hideMenu}>DESCENDING</MenuItem>
               </Menu>
             </View>
           </Right>
         </Header>
-        <View style={{padding: 10}}>
+        <View style={{ padding: 20 }}>
+          <View style={styles.search}>
             <TextInput style={styles.textInput}
               placeholder="Search Here!"
             />
+          </View>
         </View>
         <Content padder>
           <View>
@@ -63,7 +69,7 @@ export default class HomeScreen extends React.Component {
           </View>
         </Content>
         <TouchableOpacity style={styles.fab} onPress={() => this.props.navigation.navigate('AddNote')}>
-          <Icon name="plus"  size={21} color="#000" />
+          <Icon name="plus" size={22} color="#000" />
         </TouchableOpacity>
       </Container>
     );
@@ -71,24 +77,27 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  search: {
+    elevation: 3,
+    borderRadius: 23
+  },
   textInput: {
+    backgroundColor: '#fff',
     borderRadius: 23,
-    margin: 5,
-    marginTop: 10,
     padding: 10,
     paddingLeft: 20,
-    elevation: 2,
+    fontSize: 15
   },
   fab: {
     elevation: 3,
-    alignItems:'center',
-    justifyContent:'center',
-    width:60,
-    height:60,
-    position: 'absolute',                                          
-    bottom: 35,                                                    
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    paddingHorizontal: 22,
+    position: 'absolute',
+    bottom: 35,
     right: 15,
-    backgroundColor:'#FFF',
-    borderRadius:100,
-  },
+    backgroundColor: '#FFF',
+    borderRadius: 50
+  }
 });
