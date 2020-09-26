@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { StatusBar, View, TextInput, Picker } from 'react-native';
+import { View, TextInput, Picker } from 'react-native';
 import { Container, Header, Title, Left, Right, Button, Body, Content, Text } from "native-base";
 import Icon from "react-native-vector-icons/AntDesign";
 import ItemsCategory from '../Data/categories';
 
 export default class EditNote extends Component {
 
-  state = { category: ''}
-  updateCategory = (value: string) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: '',
+      title: '',
+      description: ''
+    }
+  }
+
+  updateCategory = (value) => {
     this.setState({ category: value })
   }
 
@@ -15,13 +23,14 @@ export default class EditNote extends Component {
     let item  = []
     for(let i = 0; i<ItemsCategory.length; i++){
       item.push(
-        <Picker.item key={i} label={ItemsCategory[i].category} value={ItemsCategory[i].category} />
+        <Picker.item key={i} label={ItemsCategory[i].category} value={ItemsCategory[i]} />
       )
     }
     return item
   }
 
   render() {
+    console.log(this.state.category)
     return (
       <Container>
         <Header style={{ backgroundColor: '#FFFFFF'}}>
@@ -45,12 +54,21 @@ export default class EditNote extends Component {
         </Header>
         <Content>
           <View style={{margin:27, height:50, top:40, borderBottomWidth:1}}>
-            <TextInput multiline={true} style={{fontSize:20}} placeholder='EDIT TITLE ...'>
+            <TextInput 
+              multiline={true}
+              style={{fontSize:20}}
+              placeholder='EDIT TITLE ...'
+              onChangeText={text => this.setState({ title: text })}>
               {this.props.navigation.state.params.title}
             </TextInput>
           </View>
           <View style={{margin:27, height:250}}>
-            <TextInput multiline={true} style={{fontSize:20}} placeholder='EDIT DESCRIPTION ...'>
+            <TextInput 
+              multiline={true}
+              style={{fontSize:20}}
+              placeholder='EDIT DESCRIPTION ...'
+              onChangeText={text => this.setState({ description: text })}
+            >
               {this.props.navigation.state.params.note}
             </TextInput>
           </View>
@@ -59,11 +77,10 @@ export default class EditNote extends Component {
           </View>
           <View style={{margin:30, maxWidth:200, marginTop:5}} >
             <Picker
-              style={{elevation:2}}
+              style={{ elevation:2 }}
               selectedValue={this.state.category}
-              onValueChange = {this.updateCategory.bind(this)}
+              onValueChange = {this.updateCategory}
             >
-              <Picker.Item label={this.props.navigation.state.params.category} value={this.props.navigation.state.params.category} />
               {this.items()}
             </Picker>
           </View>
