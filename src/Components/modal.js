@@ -1,7 +1,27 @@
 import React, { Component } from 'react';
 import { Modal, Text, View, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import CategoriesData from '../Data/categories';
 
 class ModalExample extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: '',
+      icon: ''
+    }
+  }
+
+  onAdd = () => {
+    const data = {
+      id: CategoriesData.length + 2,
+      category: this.state.category,
+      icon: this.state.icon
+    }
+    CategoriesData.push(data)
+
+    this.props.onClose()
+  }
 
   render() {
     return (
@@ -13,13 +33,21 @@ class ModalExample extends Component {
           <View style={{ flex:1, backgroundColor: 'rgba(0, 0, 0, 0.20)', alignItems:'center', justifyContent:'center' }}>
             <View style={{ backgroundColor:'#fff', borderRadius:5, width:'70%', padding:20, elevation:3 }}>
               <View>
-                <TextInput style={styles.textInput} placeholder='Category Name'/>
-                <TextInput style={styles.textInput} placeholder='Image Url'/>
+                <TextInput 
+                  style={styles.textInput} 
+                  placeholder='Category Name'
+                  onChangeText={text => this.setState({ category: text })}
+                />
+                <TextInput 
+                  style={styles.textInput}
+                  placeholder='Image Url'
+                  onChangeText={text => this.setState({ icon: text })}
+                />
               </View>
               <View style={{ flexDirection:'row', marginTop:30, justifyContent:'flex-end' }}>
                 <TouchableOpacity
                   style={styles.button} 
-                  onPress={this.props.onClose}>
+                  onPress={this.onAdd}>
                   <Text style={styles.buttonLabel}>Add</Text>
                 </TouchableOpacity>
                 <TouchableOpacity

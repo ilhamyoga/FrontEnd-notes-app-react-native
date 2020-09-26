@@ -8,19 +8,32 @@ import ListData from '../Components/listData';
 
 export default class HomeScreen extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: '',
+      sort: 'desc'
+    }
+  }
+
   _menu = null;
  
   setMenuRef = ref => {
     this._menu = ref;
   };
  
-  hideMenu = () => {
+  hideMenu = (value) => {
+    this.setState({ sort: value })
     this._menu.hide();
   };
  
   showMenu = () => {
     this._menu.show();
   };
+
+  search = (value) => {
+    this.setState({ search: value })
+  }
 
   render() {
     return (
@@ -50,22 +63,24 @@ export default class HomeScreen extends React.Component {
                     style={{ fontSize:20, color: "#000000" }}
                   />
                 }>
-                <MenuItem onPress={this.hideMenu}>ASCENDING</MenuItem>
-                <MenuItem onPress={this.hideMenu}>DESCENDING</MenuItem>
+                <MenuItem onPress={() => this.hideMenu('asc')}>ASCENDING</MenuItem>
+                <MenuItem onPress={() => this.hideMenu('desc')}>DESCENDING</MenuItem>
               </Menu>
             </View>
           </Right>
         </Header>
         <View style={{ padding: 20 }}>
           <View style={styles.search}>
-            <TextInput style={styles.textInput}
+            <TextInput 
+              style={styles.textInput}
               placeholder="Search Here!"
+              onChangeText={text => this.search(text)}
             />
           </View>
         </View>
         <Content padder>
           <View>
-            <ListData navigation={this.props.navigation}/>
+            <ListData {...this.props} search={this.state.search} sort={this.state.sort} />
           </View>
         </Content>
         <TouchableOpacity style={styles.fab} onPress={() => this.props.navigation.navigate('AddNote')}>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StatusBar, View, TextInput, Picker } from 'react-native';
 import { Container, Header, Title, Left, Right, Button, Body, Content, Text } from "native-base";
 import Icon from "react-native-vector-icons/AntDesign";
-import ItemsCategory from '../Data/itemsCategory';
+import ItemsCategory from '../Data/categories';
 
 export default class EditNote extends Component {
 

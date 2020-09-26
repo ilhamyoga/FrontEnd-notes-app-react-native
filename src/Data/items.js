@@ -1,43 +1,49 @@
 let items = [
   { 
-    key: '1',
-    time: '24 Juni',
+    id: 1,
+    time: '2015-06-24T03:24:00',
     title: 'Lifecycle',
+    category_id: 4,
     category: 'Learn',
     note: 'Component DidMount, Component WiilUnmount' 
   },
   { 
-    key: '2',
-    time: '23 Juni',
+    id: 2,
+    time: '2015-06-24T03:25:00',
     title: 'Hooks',
+    category_id: 4,
     category: 'Learn',
     note: 'UseState, UseEffect, UseConteks, UseStyle, UseReducer, UseRef' 
   },
   { 
-    key: '3',
-    time: '24 Juni',
+    id: 3,
+    time: '2015-06-24T03:26:00',
     title: 'Daily Standup',
+    category_id: 2,
     category: 'Work',
     note: 'Yesterday i’m learn about react native, Today i will start make application' 
   },
   { 
-    key: '4',
-    time: '24 Juni',
+    id: 4,
+    time: '2015-06-24T03:27:00',
     title: 'Macbook',
+    category_id: 3,
     category: 'Wishlist',
     note: 'I have to buy a Macbook this year' 
   },
   { 
-    key: '5',
-    time: '24 Juni',
+    id: 5,
+    time: '2015-06-24T03:28:00',
     title: 'Daily Standup',
+    category_id: 2,
     category: 'Work',
     note: 'Yesterday i’m learn about react native, Today i will start make application' 
   },
   { 
-    key: '6',
-    time: '24 Juni',
+    id: 6,
+    time: '2015-06-24T03:30:00',
     title: 'Today',
+    category_id: 1,
     category: 'Personal',
     note: 'Install React Native, Learn about React Native, Make simple app' 
   },

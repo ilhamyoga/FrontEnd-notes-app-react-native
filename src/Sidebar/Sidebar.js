@@ -3,28 +3,14 @@ import { Image, View, StyleSheet } from "react-native";
 import { Container, Content, Text, List, Left, Body, ListItem } from "native-base";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Modal from "../Components/modal";
-
-const routes = [
-  {
-    name:"Personal",
-    icon:"user-circle",
-  },
-  {
-    name:"Work",
-    icon:"briefcase",
-  },
-  {
-    name:"Wishlist",
-    icon:"list-alt",
-  }
-];
+import CategoriesData from '../Data/categories';
 
 export default class SideBar extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      data: routes,
+      categories: CategoriesData,
       modalVisible: false,
     }
   }
@@ -46,12 +32,13 @@ export default class SideBar extends Component {
           </View>
           <List>
             {
-              routes.map(data => {
+              this.state.categories.map((data, index) => {
                 return (
-                  <ListItem 
+                  <ListItem
+                    key={index}
                     icon
                     noBorder
-                    onPress={() => this.props.navigation.navigate(data.name)}>
+                    onPress={() => this.props.navigation.navigate(data.category)}>
                     <Left>
                       <Icon
                         name={data.icon}
@@ -59,7 +46,7 @@ export default class SideBar extends Component {
                       />
                     </Left>
                     <Body>
-                      <Text style={styles.label}>{data.name}</Text>
+                      <Text style={styles.label}>{data.category}</Text>
                     </Body>
                   </ListItem>
                 );
